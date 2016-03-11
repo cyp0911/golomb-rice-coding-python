@@ -4,7 +4,7 @@ import math
 
 
 
-def ricecod(x,m):
+def golomb_cod(x,m):
     c = int(math.ceil(math.log(m,2)))
     remin = x % m
     quo =int(math.floor(x / m))
@@ -30,29 +30,25 @@ def ricecod(x,m):
 	bi = a.format(remin+div)
 
     final = first + "0" +str(bi)
-    print "final",final
+    #print "final",final
     return final
 
-
-def bwt(x):
-    array = []
-    newarr = ""
-    for i in range(len(x)):
-	#print x
-	array.append(x)
-	x = x[1:]+x[0]
-	array.sort()
-	if i == len(x)-1:
-	    return array
+#
+#def bwt(x):
+#    array = []
+#    newarr = ""
+#    for i in range(len(x)):
+#	#print x
+#	array.append(x)
+#	x = x[1:]+x[0]
+#	array.sort()
+#	if i == len(x)-1:
+#	    return array
 		
 
-
-rco = ricecod(18,16)
-#print bwt(rco)
-array = bwt(rco)
-
-newarr = ""
-for i in  array:
-    newarr = newarr + i[-1:]
-
-print newarr
+#golomb parameter m. when m equals 2's power of n, n is the rice parameters and could be called as rice coding
+m = 16
+#value which waiting for code
+v = 18
+golocode = golomb_cod(v,m)
+print "Golomb coding result for",v,"with parameter m equals",m,"is",golocode

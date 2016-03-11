@@ -3,5 +3,5 @@ Implementation of golomb(rice)coding in python
 
 Usage: python testgolomb.py
 
-where v is the value which you want to code by Golomb code
+where v is the value which you want to code by Golomb code. \n
 m is the golomb code parameter.
